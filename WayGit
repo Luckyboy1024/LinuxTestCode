@@ -1,0 +1,131 @@
+[key@localhost ~]$ git config --global user.name "Luckyboy1024"
+[key@localhost ~]$ git config --global user.email "2819549538@qq.com"
+[key@localhost ~]$ git config --list
+user.name=Luckyboy1024
+user.email=2819549538@qq.com
+[key@localhost ~]$ ll
+total 0
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Desktop
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Documents
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Downloads
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Music
+drwxrwxr-x. 4 key key 31 8月  27 16:52 Mycode
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Pictures
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Public
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Templates
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Videos
+drwxr-xr-x. 2 key key 51 8月  27 17:03 下载
+drwxr-xr-x. 3 key key 24 8月  27 17:04 图片
+drwxrwxr-x. 2 key key 21 8月  28 15:23 我的文档
+[key@localhost ~]$ mkdir gitcode
+[key@localhost ~]$ ll
+total 0
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Desktop
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Documents
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Downloads
+drwxrwxr-x. 2 key key  6 8月  28 19:54 gitcode
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Music
+drwxrwxr-x. 4 key key 31 8月  27 16:52 Mycode
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Pictures
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Public
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Templates
+drwxr-xr-x. 2 key key  6 8月  28 10:27 Videos
+drwxr-xr-x. 2 key key 51 8月  27 17:03 下载
+drwxr-xr-x. 3 key key 24 8月  27 17:04 图片
+drwxrwxr-x. 2 key key 21 8月  28 15:23 我的文档
+[key@localhost ~]$ cd gitcode/
+[key@localhost gitcode]$ git init
+Initialized empty Git repository in /home/key/gitcode/.git/
+[key@localhost gitcode]$ ll
+total 0
+[key@localhost gitcode]$ mkdir test_0
+[key@localhost gitcode]$ ll
+total 0
+drwxrwxr-x. 2 key key 6 8月  28 19:55 test_0
+[key@localhost gitcode]$ cd test_0/
+[key@localhost test_0]$ vim test.c
+[key@localhost test_0]$ gcc test.c
+[key@localhost test_0]$ ./a.out
+^C                          
+[key@localhost test_0]$ ll
+total 16
+-rwxrwxr-x. 1 key key 8392 8月  28 19:57 a.out
+-rw-rw-r--. 1 key key  103 8月  28 19:57 test.c
+[key@localhost test_0]$ cd ..
+[key@localhost gitcode]$ ll
+total 0
+drwxrwxr-x. 2 key key 33 8月  28 19:57 test_0
+[key@localhost gitcode]$ git status ./
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	test_0/
+nothing added to commit but untracked files present (use "git add" to track)
+[key@localhost gitcode]$ git add .
+[key@localhost gitcode]$ git add readme
+fatal: pathspec 'readme' did not match any files
+[key@localhost gitcode]$ git status ./
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   test_0/a.out
+#	new file:   test_0/test.c
+#
+[key@localhost gitcode]$ git commit -m "19_08_28_test"
+[master (root-commit) dc98769] 19_08_28_test
+ 2 files changed, 12 insertions(+)
+ create mode 100755 test_0/a.out
+ create mode 100644 test_0/test.c
+[key@localhost gitcode]$ git status ./
+# On branch master
+nothing to commit, working directory clean
+[key@localhost gitcode]$ ssh-keygen -t rsa -C "2819549538@qq.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/key/.ssh/id_rsa): 
+Created directory '/home/key/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/key/.ssh/id_rsa.
+Your public key has been saved in /home/key/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:Ge/YuYj8ujx9kMToy51PXjh01EHybadSIf7JyxIiOjo 2819549538@qq.com
+The key's randomart image is:
++---[RSA 2048]----+
+|            o.+  |
+|           . = + |
+|       o.   o + +|
+|      . o+ . + +.|
+|     . .S.+ + =  |
+|      ..o* = + . |
+|     .o+.oB o o  |
+|    E++o++.+ .   |
+|    ..*=oo+      |
++----[SHA256]-----+
+[key@localhost gitcode]$ cd /home/key/.ssh/id_rsa.pub
+bash: cd: /home/key/.ssh/id_rsa.pub: Not a directory
+[key@localhost gitcode]$ cat /home/key/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/1ETyufVAd8SgYHS/yue4FsYau5yXV25o6HaQ7GWxomd6OLpThSGSqASHfwJbID9rWljrDJCX/yuxYy4/gxtc+JLQQ8kz3Uc/eiyVlhrkPEspFjng9SaJ6Voiz5BQbpy5oBI7a6JVsu93Mwxl7xV0/GTTW9mdef1FWFfSaXh/lrQmVTZzd/CxkRu3cGXZyh+dIYcNnXtcomVuNbsoy++qPzNtwiJI++xfTXJTA7h0fmLoGicdf/EjvFGwDMECNkXb1APgQz1/bSsqP59sc0aNm+ip+lXl1GyQ2+Pv9SB9ieLCX9H4CYs6c2IljdspAlSvneLpsRf2LigrlywzkZ8D 2819549538@qq.com
+[key@localhost gitcode]$ git remote add origin git@github.com:Luckyboy1024/LinuxTestCode.git
+[key@localhost gitcode]$ git push -u origin master
+The authenticity of host 'github.com (13.250.177.223)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+RSA key fingerprint is MD5:16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,13.250.177.223' (RSA) to the list of known hosts.
+Counting objects: 5, done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 2.58 KiB | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To git@github.com:Luckyboy1024/LinuxTestCode.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+[key@localhost gitcode]$ 
+

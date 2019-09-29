@@ -1,6 +1,25 @@
 #include <stdio.h>
 #include <string.h>
 
+void start()
+{
+  printf("hehe\n");
+}
+
+void print()
+{
+    printf("hhhehehehe\n");
+}
+
+int  main()
+{
+  start();
+  print();
+  return 0;
+}
+
+#if 0
+
 void *Mymemcpy(void *dest, const void *src, int count)
 {
 	char *p = (char*)dest;
@@ -21,3 +40,5 @@ int main()
 	Mymemcpy(arr2+2, arr2, 16);		
 	return 0;
 }
+
+#endif
